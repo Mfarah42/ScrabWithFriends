@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  a(href="/"): button.btn.btn-secondary(type="button") Go Home
+  #login
+    .container
+      #login-row.row.justify-content-center.align-items-center
+        #login-column.col-md-6
+          #login-box.col-md-12
+            form#login-form.form(method='POST' action='/api/user/verify')
+              h3.text-center.text-info Login
+              hr
+              .form-group
+                label(for='email') Email
+                input.form-control(type='text' id='email' placeholder='email' name='email')
+              .form-group
+                label(for='password') Password
+                input.form-control(type='password' id='password' placeholder='password' name='password')
+              button.w-100.btn.btn-primary(type='submit') Log in
+              a(href="./register"): button.w-100.btn.btn-warning(type="button") Register
+        
+
+        

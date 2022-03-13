@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+:root {
+  --grid-cols: 1;
+  --grid-rows: 15;
+  --grid-scale: 50;
+  --header-height: min(5vw,40px);
+}
+
+body {
+  font-family: Montserrat;
+  user-select: none;
+  overflow: auto;
+}
+
+#wrapper {
+  text-align: center;
+}
+
+h1 {
+  font-size: min(4em , 5vw);
+  cursor: pointer;
+  display: inline-block;
+  margin: auto;
+  transition: text-shadow 3s ease-in-out;
+  user-select: none;
+}
+
+#con {
+  width: calc(var(--grid-scale) * 1vw );
+  margin: 0 auto;
+  display: grid;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;  
+  top: min(6em, 8vw);
+  grid-template-rows: repeat(
+    var(--grid-rows),
+    calc(var(--grid-scale) * 0.9vw / var(--grid-rows)));
+  grid-template-columns: repeat(
+    var(--grid-cols),
+    calc(var(--grid-scale) * 0.9vw / var(--grid-cols)));
+  );
+  grid-gap: calc(var(--grid-scale) * 0.1vw / var(--grid-cols)) calc(var(--grid-scale) * 0.1vw / var(--grid-rows));
+  padding-top: calc(var(--grid-scale) * 0.1vw / var(--grid-rows));
+  padding-left: calc(var(--grid-scale) * 0.1vw / var(--grid-cols));
+  padding-bottom: calc(var(--grid-scale) * 0.1vw / var(--grid-cols));
+  background-color: white;
+  box-shadow: calc(var(--grid-scale) * 1vw / 100 ) calc(var(--grid-scale) * 1vw / 100 ) #ddd;
+}
+
+.tray-item{
+  display: inline-block;
+  text-align: center;
+  background-color: #d9b382;
+  width: 60px;
+  height: 60px;
+  border: 5px solid;
+  border-color: #eee;
+}
+
+.tray-item:hover{
+  box-shadow: 0 0 15px #eee inset;
+}
+
+.grid-item {
+  text-align: center;
+  background-color: #d9b382;
+}
+
+.grid-item:hover {
+  box-shadow: 0 0 15px #eee inset;
+}
+
+#slider {
+  width: 20vw;
+  position: absolute;
+  height: 1vw;
+  left: 10%;
+  top: 10px;
+}
+#slider .ui-slider-handle {
+  font-size: 1.2vw;
+  padding: 0.2vw;
+  border: 2px solid #ddd;
+  text-decoration:none;
+  line-height: 1.2vw;
+  height: 1.15vw;
+}
+
+.little-number {
+  font-size: 0.33em;
+}
